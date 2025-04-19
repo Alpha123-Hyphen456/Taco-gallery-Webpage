@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Little Taco Shop Hours</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="_TACOSHO.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-yellow-50 to-red-100 font-sans">
+    
+    <header class="bg-red-600 text-white shadow-md sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">🌮 Little Taco Shop</h1>
+        <nav>
+          <ul class="flex space-x-6 text-lg">
+            <li><a href="#home" class="hover:underline">Home</a></li>
+            <li><a href="#about" class="hover:underline">About LTS</a></li>
+            <li><a href="#menu" class="hover:underline">Menu</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    
+    <main class="max-w-4xl mx-auto mt-10 px-4" id="home">
+      <section class="text-center mb-10">
+        <h2 class="text-4xl font-extrabold text-red-700 mb-3">We're Open All Week!</h2>
+        <p class="text-gray-700 text-lg">Come grab your favorite tacos any day!</p>
+      </section>
+      
+      <figure class="mb-8">
+        <img
+          src="imagesforthisproject/tacos_and_drink_400x267.png"
+          alt="A Tray of Tasty Tacos"
+          class="rounded-xl shadow-lg mx-auto w-full max-w-md transition-transform hover:scale-105 duration-300"
+        />
+        <figcaption class="text-center text-sm italic text-gray-600 mt-2">
+          A Tray of Tasty Tacos
+        </figcaption>
+      </figure>
+
+    
+      <section class="bg-white shadow-xl rounded-2xl p-6 md:p-10 mx-auto w-full max-w-xl">
+        <h3 class="text-2xl font-semibold text-red-600 mb-4 text-center">
+          Business Hours
+        </h3>
+        <dl class="text-lg space-y-4 text-gray-800">
+          <div>
+            <dt class="font-bold text-red-500">Sunday - Thursday</dt>
+            <dd>11:00 AM – 9:00 PM</dd>
+          </div>
+          <div>
+            <dt class="font-bold text-red-500">Friday - Saturday</dt>
+            <dd>11:00 AM – 11:00 PM</dd>
+          </div>
+        </dl>
+      </section>
+
+    
+      <div class="text-center mt-10">
+        <a
+          href="#home"
+          class="bg-red-500 text-white px-5 py-2 rounded-full shadow-lg hover:bg-red-600 transition"
+        >
+          🔝 Back to Top
+        </a>
+      </div>
+    </main>
+
+    
+    <footer class="bg-gray-800 text-white text-center py-5 mt-14">
+      <p>&copy; 2025 The Little Taco Shop. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

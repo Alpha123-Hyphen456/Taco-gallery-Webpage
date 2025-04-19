@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Little Taco Shop</title>
+    <link rel="icon" href="imagesforthisproject/_TACOSHO.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#7C3AED',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-yellow-50 font-sans text-gray-800">
+
+    <!-- Main Container -->
+    <div class="max-w-screen-xl mx-auto px-6 py-12">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-primary font-heading drop-shadow-md">🌮 The Little Taco Shop 🌮</h1>
+            <ul class="flex justify-center gap-8 mt-6 text-lg font-medium text-gray-700">
+                <li><a href="#about" class="hover:text-primary transition duration-300">About LTS</a></li>
+                <li><a href="#our" class="hover:text-primary transition duration-300">Our Menu</a></li>
+                <li><a href="hours.html" class="hover:text-primary transition duration-300">Store Hours</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+            </ul>
+        </header>
+
+       
+        <section class="mb-20 relative">
+            <h2 class="text-3xl font-bold text-center text-secondary mb-6 font-heading">Taco Gallery</h2>
+            <div class="slider flex overflow-x-hidden scroll-smooth space-x-4 px-1">
+                <figure class="min-w-[300px] flex-shrink-0">
+                    <img src="imagesforthisproject/y1.jpg" alt="Tacos and Drink" class="h-60 w-full object-cover rounded-3xl shadow-lg">
+                    <figcaption class="text-center text-xl mt-2 text-secondary font-semibold">Tacos and Drink</figcaption>
+                </figure>
+                <figure class="min-w-[300px] flex-shrink-0">
+                    <img src="imagesforthisproject/y2.jpg" alt="Crunchy Taco" class="h-60 w-full object-cover rounded-3xl shadow-lg">
+                    <figcaption class="text-center text-xl mt-2 text-secondary font-semibold">Crunchy Taco</figcaption>
+                </figure>
+                <figure class="min-w-[300px] flex-shrink-0">
+                    <img src="imagesforthisproject/y3.jpg" alt="Soft Taco" class="h-60 w-full object-cover rounded-3xl shadow-lg">
+                    <figcaption class="text-center text-xl mt-2 text-secondary font-semibold">Soft Taco</figcaption>
+                </figure>
+                <figure class="min-w-[300px] flex-shrink-0">
+                    <img src="imagesforthisproject/y7.jpg" alt="Quesadilla" class="h-60 w-full object-cover rounded-3xl shadow-lg">
+                    <figcaption class="text-center text-xl mt-2 text-secondary font-semibold">Quesadilla</figcaption>
+                </figure>
+                <figure class="min-w-[300px] flex-shrink-0">
+                    <img src="imagesforthisproject/y6.jpg" alt="Spicy Tacos" class="h-60 w-full object-cover rounded-3xl shadow-lg">
+                    <figcaption class="text-center text-xl mt-2 text-secondary font-semibold">Spicy Tacos</figcaption>
+                </figure>
+                <figure class="min-w-[300px] flex-shrink-0">
+                    <img src="imagesforthisproject/y5.jpg" alt="Loaded Nachos" class="h-60 w-full object-cover rounded-3xl shadow-lg">
+                    <figcaption class="text-center text-xl mt-2 text-secondary font-semibold">Loaded Nachos</figcaption>
+                </figure>
+                <figure class="min-w-[300px] flex-shrink-0">
+                    <img src="imagesforthisproject/y4.jpg" alt="Taco Platter" class="h-60 w-full object-cover rounded-3xl shadow-lg">
+                    <figcaption class="text-center text-xl mt-2 text-secondary font-semibold">Taco Platter</figcaption>
+                </figure>
+            </div>
+            <button onclick="moveSlide(-1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-secondary text-white p-2 rounded-full shadow-md z-10">&#10094;</button>
+            <button onclick="moveSlide(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-secondary text-white p-2 rounded-full shadow-md z-10">&#10095;</button>
+        </section>
+
+        <script>
+            let currentIndex = 0;
+            function moveSlide(direction) {
+                const slider = document.querySelector('.slider');
+                const slides = slider.children;
+                const slideWidth = slides[0].offsetWidth + 16;
+                const totalSlides = slides.length;
+
+                currentIndex += direction;
+
+                if (currentIndex < 0) currentIndex = totalSlides - 1;
+                else if (currentIndex >= totalSlides) currentIndex = 0;
+
+                slider.scrollTo({
+                    left: currentIndex * slideWidth,
+                    behavior: 'smooth'
+                });
+            }
+        </script>
+
+        <hr class="my-12 border-gray-300">
+
+        
+        <article id="about" class="mb-16 bg-white p-8 rounded-2xl shadow-md">
+            <h2 class="text-4xl font-bold text-secondary mb-4 font-heading">About <abbr title="Kansas">LTS</abbr></h2>
+            <p class="text-lg text-gray-700 leading-relaxed">Nestled in the heart of the city, we’re a small yet flavorful haven for all taco lovers. Established in 2022, The Little Taco Shop was born out of a deep passion for authentic, delicious, and freshly made tacos 🌮. What started as a humble idea has now become a go-to spot for families, friends, and foodies who crave a bold twist on traditional Mexican flavors.</p>
+            <p class="text-lg text-gray-700 leading-relaxed mt-4">At LTS, we believe food isn’t just about taste — it’s about experience. From our crunchy and soft tacos to cheesy quesadillas, burritos, and hand-cut chips with salsa, everything is made with love, fresh ingredients, and a hint of spice.</p>
+            <p class="text-lg text-gray-700 leading-relaxed mt-4">Whether you’re dropping by for a quick bite or hanging out with friends over some cold drinks, we’ve got something special for everyone. Come taste the joy, soak in the vibe, and be a part of our taco-loving family.</p>
+            <p class="text-lg font-semibold mt-6">We can’t wait to serve you!</p>
+
+            <h3 class="text-2xl font-semibold mt-10">🌮 Taco Trivia</h3>
+            <p class="text-lg text-gray-700 mt-2">When did tacos first appear in the United States?</p>
+        </article>
+
+        <hr class="my-12 border-gray-300">
+
+        
+        <article id="our" class="mb-16">
+            <h2 class="text-4xl font-bold text-center text-primary font-heading mb-10">Our Menu</h2>
+
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/x1.jpg" alt="Crunchy Taco" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Crunchy Taco</h3>
+                        <p class="text-gray-600 mt-2">1 Pc - ₹120</p>
+                        <p class="text-gray-600">2 Pcs - ₹200</p>
+                        <p class="text-gray-600">3 Pcs - ₹270</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/images (1).jpeg" alt="Soft Taco" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Soft Taco</h3>
+                        <p class="text-gray-600 mt-2">1 Pc - ₹150</p>
+                        <p class="text-gray-600">2 Pcs - ₹250</p>
+                        <p class="text-gray-600">3 Pcs - ₹320</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/chips-salsa-clipping-path-7183411.webp" alt="Chips and Salsa" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Chips & Salsa</h3>
+                        <p class="text-gray-600 mt-2">Regular - ₹160</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/istockphoto-1313361282-612x612.jpg" alt="Burrito" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Mexican Burrito</h3>
+                        <p class="text-gray-600 mt-2">Veg - ₹200</p>
+                        <p class="text-gray-600">Chicken - ₹250</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/x2.jpg" alt="Quesadilla" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Cheesy Quesadilla</h3>
+                        <p class="text-gray-600 mt-2">Veg - ₹180</p>
+                        <p class="text-gray-600">Paneer - ₹220</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/x6.avif" alt="Shrimp Tacos" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Shrimp Tacos</h3>
+                        <p class="text-gray-600 mt-2">Veg - ₹200</p>
+                        <p class="text-gray-600">Paneer - ₹250</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/x7.avif" alt="Tacos de Birria" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Tacos de Birria</h3>
+                        <p class="text-gray-600 mt-2">Veg- ₹40</p>
+                        <p class="text-gray-600">Mushroom- ₹60</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/x9.avif" alt="Drink" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Barbacoa</h3>
+                        <p class="text-gray-600 mt-2">Veg - ₹240</p>
+                        <p class="text-gray-600">Non Veg - ₹500</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+                    <img src="imagesforthisproject/w1.jpg" alt="Drink" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Drinks</h3>
+                        <p class="text-gray-600 mt-2">Coke / Pepsi - ₹40</p>
+                        <p class="text-gray-600">Iced Tea - ₹60</p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+        
+        <footer class="text-center py-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-t-3xl mt-20 shadow-lg">
+            <p><a href="#top" class="text-yellow-300 hover:underline">⬆ Back to Top</a></p>
+            <hr class="my-4 border-indigo-300">
+            <p class="text-lg">&copy; 2025 The Little Taco Shop</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us | Little Taco Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="_TACOSHO.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-r from-pink-100 via-yellow-100 to-green-100 min-h-screen font-sans text-gray-800">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white p-5 shadow-lg">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold drop-shadow-md">🌮 Little Taco Shop</h1>
+        <nav>
+          <ul class="flex space-x-6 text-lg font-medium">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li><a href="index.html#about" class="hover:underline">About</a></li>
+            <li><a href="index.html#menu" class="hover:underline">Menu</a></li>
+            <li><a href="hours.html" class="hover:underline">Hours</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <section class="text-center mb-10">
+        <h2 class="text-4xl font-extrabold text-pink-600 mb-2">Contact Us</h2>
+        <p class="text-lg text-gray-700">We’d love to hear from you!</p>
+      </section>
+
+      <!-- Image -->
+      <figure class="mb-10">
+        <img
+          src="imagesforthisproject/tacos_close_up_400x260.png"
+          alt="Little Taco Shop Tacos"
+          class="mx-auto rounded-3xl shadow-lg border-4 border-pink-200"
+        />
+        <figcaption class="text-center italic text-sm mt-2 text-gray-600">
+          Little Taco Shop Tacos
+        </figcaption>
+      </figure>
+
+      <!-- Contact Form -->
+      <section class="bg-white bg-opacity-90 backdrop-blur-md p-8 rounded-3xl shadow-2xl">
+        <h3 class="text-2xl font-bold text-center text-purple-600 mb-6">Send Us A Message</h3>
+        <form id="contactForm" class="space-y-5">
+          <div>
+            <label for="name" class="block font-semibold text-gray-700">Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your name"
+              required
+              class="w-full mt-1 px-4 py-2 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block font-semibold text-gray-700">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Your email"
+              required
+              class="w-full mt-1 px-4 py-2 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block font-semibold text-gray-700">Message</label>
+            <textarea
+              id="message"
+              rows="5"
+              placeholder="Type your message here"
+              required
+              class="w-full mt-1 px-4 py-2 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
+            ></textarea>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              type="submit"
+              class="bg-gradient-to-r from-pink-500 to-yellow-400 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:scale-105 transition"
+            >
+              Send
+            </button>
+            <button
+              type="reset"
+              class="bg-gray-200 px-6 py-2 rounded-full hover:bg-gray-300 transition"
+            >
+              Reset
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Location -->
+      <section class="text-center mt-12">
+        <h3 class="text-xl font-bold text-purple-700">📍 Our Location</h3>
+        <address class="not-italic mt-2 text-gray-600 leading-relaxed">
+          M7JX+XH2, Dda Market, Mansarovar Park, Shahdara <br />
+          New Delhi, MO 70429-44265<br />
+          📞 Phone: 6396-154-311
+        </address>
+      </section>
+
+      <div class="text-center mt-10">
+        <a
+          href="#"
+          class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full hover:scale-105 transition shadow-md"
+        >
+          🔝 Back To Top
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500 text-white text-center py-5 mt-16">
+      <p class="font-semibold">&copy; 2025 The Little Taco Shop</p>
+    </footer>
+
+    <!-- JavaScript for Excel Export -->
+    <script>
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+          alert("Please fill out all fields.");
+          return;
+        }
+
+        // Create Excel workbook
+        const wb = XLSX.utils.book_new();
+        const wsData = [["Name", "Email", "Message"], [name, email, message]];
+        const ws = XLSX.utils.aoa_to_sheet(wsData);
+        XLSX.utils.book_append_sheet(wb, ws, "ContactForm");
+
+        XLSX.writeFile(wb, "ContactForm_Submission.xlsx");
+        alert("Thank you! Your form has been submitted and saved as an Excel file.");
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
