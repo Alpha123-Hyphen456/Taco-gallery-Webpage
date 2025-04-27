@@ -15,7 +15,7 @@
   </head>
 
   <body class="bg-gradient-to-r from-pink-100 via-yellow-100 to-green-100 min-h-screen font-sans text-gray-800">
-    <!-- Header -->
+    
     <header class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white p-5 shadow-lg">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
         <h1 class="text-2xl font-bold drop-shadow-md">🌮 Little Taco Shop</h1>
@@ -30,14 +30,14 @@
       </div>
     </header>
 
-    <!-- Main Content -->
+    
     <main class="max-w-4xl mx-auto px-6 py-12">
       <section class="text-center mb-10">
         <h2 class="text-4xl font-extrabold text-pink-600 mb-2">Contact Us</h2>
         <p class="text-lg text-gray-700">We’d love to hear from you!</p>
       </section>
 
-      <!-- Image -->
+      
       <figure class="mb-10">
         <img
           src="imagesforthisproject/tacos_close_up_400x260.png"
@@ -49,7 +49,7 @@
         </figcaption>
       </figure>
 
-      <!-- Contact Form -->
+      
       <section class="bg-white bg-opacity-90 backdrop-blur-md p-8 rounded-3xl shadow-2xl">
         <h3 class="text-2xl font-bold text-center text-purple-600 mb-6">Send Us A Message</h3>
         <form id="contactForm" class="space-y-5">
@@ -103,7 +103,7 @@
         </form>
       </section>
 
-      <!-- Location -->
+    
       <section class="text-center mt-12">
         <h3 class="text-xl font-bold text-purple-700">📍 Our Location</h3>
         <address class="not-italic mt-2 text-gray-600 leading-relaxed">
@@ -123,12 +123,12 @@
       </div>
     </main>
 
-    <!-- Footer -->
+    
     <footer class="bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500 text-white text-center py-5 mt-16">
       <p class="font-semibold">&copy; 2025 The Little Taco Shop</p>
     </footer>
 
-    <!-- JavaScript for Excel Export -->
+    
     <script>
       const form = document.getElementById("contactForm");
 
@@ -144,7 +144,7 @@
           return;
         }
 
-        // Create Excel workbook
+        
         const wb = XLSX.utils.book_new();
         const wsData = [["Name", "Email", "Message"], [name, email, message]];
         const ws = XLSX.utils.aoa_to_sheet(wsData);
